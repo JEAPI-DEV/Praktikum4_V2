@@ -25,7 +25,6 @@ int main() {
     double rootNewton, rootBisection, rootRegula;
     int i;
 
-
     for (i = 0; i < NUMBEROFFUNCTIONS; i++) {
         printf("%s\n", labels[i]);
         /* replacing 3 with function_arr[i].b since with that it can find "nullstellen" higher than 3 */
