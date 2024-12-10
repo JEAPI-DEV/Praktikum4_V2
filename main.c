@@ -28,9 +28,8 @@ int main() {
 
     for (i = 0; i < NUMBEROFFUNCTIONS; i++) {
         printf("%s\n", labels[i]);
-        /* replacing with (function_arr[i].a + function_arr[i].b) / 2.0)
-         * instead of 3 since it solves no root found for tan(x) -x */
-        rootNewton = newton(function_arr[i].function,  (function_arr[i].a + function_arr[i].b) / 2.0);
+        /* replacing 3 with function_arr[i].b since with that it can find "nullstellen" higher than 3 */
+        rootNewton = newton(function_arr[i].function,  function_arr[i].b);
         printf("Newton: %f (Iterations: %d)\n", rootNewton, iteNewton);
 
         rootBisection = bisection(function_arr[i].function, function_arr[i].a, function_arr[i].b);
