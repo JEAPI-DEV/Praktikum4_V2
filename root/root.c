@@ -37,10 +37,6 @@ double newton(double (*function)(double), double x_var) {
 
 double bisection(double (*function)(double), double a, double b) {
     double mid, Fmid;
-    if (function(a) * function(b) > 0) {
-        printf("Bisection: Invalid interval [%f, %f]\n", a, b);
-        return NAN;
-    }
 
     for (iteBisection = 0; iteBisection < MAX_ITERATIONS; iteBisection++) {
         mid = (a + b) / 2.0;
@@ -63,10 +59,6 @@ double bisection(double (*function)(double), double a, double b) {
 
 double regulaFalsi(double (*function)(double), double a, double b) {
     double x, fx;
-    if (function(a) * function(b) > 0) {
-        printf("Regula-Falsi: Invalid interval [%f, %f]\n", a, b);
-        return NAN;
-    }
 
     for (iteRegula = 0; iteRegula < MAX_ITERATIONS; iteRegula++) {
         /* https://de.wikipedia.org/wiki/Regula_falsi
